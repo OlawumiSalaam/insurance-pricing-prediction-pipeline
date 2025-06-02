@@ -2,9 +2,15 @@ pandas
 numpy
 seaborn
 matplotlib
+plotly
 scikit-learn
 joblib
 Flask
 xgboost
+catboost
+category_encoders
+scikit-optimize
+
+
 
 -e .
