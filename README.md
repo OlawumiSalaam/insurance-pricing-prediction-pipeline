@@ -1,10 +1,10 @@
 # Insurance Pricing Prediction with XGBoost Regressor
 
-# 🧠 Insurance Pricing Prediction with XGBoost Regressor
-
 ## 🚀 Project Overview
 
 This project predicts **insurance charges** based on user-specific features using machine learning. It provides a clean web UI for users to interact with the model, and it's designed for easy deployment via **Flask API** on **AWS Elastic Beanstalk**.
+
+![Flask Deployment Screenshot](static/Flask_deployment.png)
 
 ### ✅ Goal:
 Build an end-to-end ML pipeline that:
@@ -56,6 +56,9 @@ Build an end-to-end ML pipeline that:
 ```bash
 git clone https://github.com/OlawumiSalaam/insurance-pricing-prediction-pipeline.git
 cd insurance-pricing-prediction-pipeline
+```
+
+---
 
 ### 2. Set up the virtual environment
 
@@ -67,3 +70,76 @@ venv\Scripts\activate
 # For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
+```
+
+---
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Run the Flask app
+
+```bash
+python app.py
+```
+
+---
+
+## 🔁 Example Prediction (API)
+
+You can make a `POST` request to `/predict` with JSON data.
+
+### Request
+
+```http
+POST /predict
+Content-Type: application/json
+```
+
+```json
+{
+  "age": 45,
+  "sex": "female",
+  "bmi": 28.5,
+  "children": 2,
+  "smoker": "yes",
+  "region": "southwest"
+}
+```
+
+### Response
+
+```json
+{
+  "prediction": 30255.76,
+  "currency": "Naira(#)",
+  "model_version": "1.0.0"
+}
+```
+
+---
+
+## ☁️ Deployment on AWS Elastic Beanstalk
+
+The app is configured to deploy on AWS Elastic Beanstalk using:
+
+- `Procfile` — specifies Gunicorn command
+- `requirements.txt` — Python dependencies
+- `app.py` — Flask entry point
+
+### Steps:
+
+1. Zip your project files.
+2. Upload and deploy to your Elastic Beanstalk environment.
+3. AWS takes care of the rest.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
