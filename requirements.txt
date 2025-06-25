@@ -10,6 +10,8 @@ xgboost
 catboost
 category_encoders
 scikit-optimize
+gunicorn
+
 
 
 
